@@ -1524,6 +1524,7 @@ public abstract class CASFileCache implements ContentAddressableStorage {
 
       // directory
       if (isDirectory) {
+        System.out.println("Recursing into " + entryPath + " to compute directory");
         List<NamedFileKey> childDirent = listDirentSorted(entryPath);
         Directory dir = computeDirectory(entryPath, childDirent, fileKeys, inputsBuilder);
         b.addDirectoriesBuilder().setName(name).setDigest(digestUtil.compute(dir));
