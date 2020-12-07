@@ -800,7 +800,7 @@ public class Worker extends LoggingMain {
                     registerIfExpired();
                     SECONDS.sleep(1);
                   }
-                } catch (InterruptedException e) {
+                } finally {
                   try {
                     stop();
                   } catch (InterruptedException ie) {
